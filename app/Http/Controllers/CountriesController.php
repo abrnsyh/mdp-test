@@ -7,6 +7,29 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class CountriesController extends Controller {
+    public function index(Request $request, Countries $countries) {
+        $country = $countries->newQuery();
+        $q = $request->query();
+        if (empty($q)) {
+            return Countries::with('states')->paginate(15);
+        } else {
+            if ($request->has('name')) {
+                $country->where('name', $q['name']);
+            }
+            if ($request->has('code')) {
+                $country->where('code', $q['code']);
+            }
+            if ($request->has('continent')) {
+                $country->where('continent', $q['continent']);
+            }
+
+            $response = $country->with('states')->get();
+            return $response->count() <= 0 ? response()->json([
+                'message' => 'Data not found'
+            ], 404) : $response;
+        }
+    }
+
     public function store(Request $request) {
         $request->validate([
             'name' => 'required|max:50|string|min:1',
@@ -14,20 +37,39 @@ class CountriesController extends Controller {
             'continent' => 'string|required|max:2|min:2',
         ]);
 
-        Countries::create([
+        $data = Countries::create([
             'name' => $request->name,
             'code' => $request->code,
             'continent' => $request->continent
         ]);
 
-        return redirect()->back();
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Country successfully created',
+                'data' => $data
+            ]);
+        } else {
+            return redirect()->back();
+        }
+
     }
 
-    public function show($id) {
+    public function show(Request $request, $id) {
         $country = Countries::where('id', $id)->with(['states', 'states.country'])->first();
-        return Inertia::render('Country/CountryDetail', [
-            'countryData' => $country
-        ]);
+        if ($request->wantsJson()) {
+            if ($country === null) {
+                return response()->json([
+                    'message' => 'data not found'
+                ], 404);
+            }
+            return response()->json([
+                'data' => $country
+            ]);
+        } else {
+            return Inertia::render('Country/CountryDetail', [
+                'countryData' => $country
+            ]);
+        }
     }
 
     public function update(Request $request, $id) {
@@ -43,11 +85,25 @@ class CountriesController extends Controller {
         $country->continent = $request->continent;
         $country->save();
 
-        return redirect()->back();
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Country Successfully Updated',
+                'data' => $country
+            ]);
+        } else {
+            return redirect()->back();
+        }
+
     }
 
-    public function destroy($id) {
+    public function destroy(Request $request, $id) {
         Countries::find($id)->delete();
-        return to_route('home');
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Country successfully deleted',
+            ]);
+        } else {
+            return to_route('home');
+        }
     }
 }
