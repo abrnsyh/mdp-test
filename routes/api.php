@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CountriesController;
+use App\Http\Controllers\StatesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('v1')->group(function () {
-    Route::get('/countries', [CountriesController::class, 'index']);
-    Route::get('/countries/{id}', [CountriesController::class, 'show']);
-    Route::post('/countries', [CountriesController::class, 'store']);
-    Route::put('/countries/{id}', [CountriesController::class, 'update']);
-    Route::delete('/countries/{id}', [CountriesController::class, 'destroy']);
+    Route::controller(CountriesController::class)->group(function () {
+        Route::get('/countries', 'index');
+        Route::get('/countries/{id}', 'show');
+        Route::post('/countries', 'store');
+        Route::put('/countries/{id}', 'update');
+        Route::delete('/countries/{id}', 'destroy');
+    });
+
+    Route::controller(StatesController::class)->group(function () {
+        Route::get('/states', 'index');
+        Route::get('/states/{id}', 'show');
+        Route::post('/states', 'store');
+        Route::put('/states/{id}', 'update');
+        Route::delete('/states/{id}', 'destroy');
+    });
 });
