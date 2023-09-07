@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "5b17ee01-066f-4e7f-8bb1-9c60c9d628c1",
+		"name": "Assessment Test MDP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23254590"
+	},
+	"item": [
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/countries?name=TESTINGGG&code=ID&continent=EU",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "TESTINGGG",
+									"description": "Country Name"
+								},
+								{
+									"key": "code",
+									"value": "ID"
+								},
+								{
+									"key": "continent",
+									"value": "EU"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Country by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/countries/259",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"259"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjJhYzcwMjllMGQ1OGUzZDNiNjQ0MzkxOTViODNhNjE4MzIwNWI0YTcwMWE1NTY5NjU1YjJmNmI3ZmY1MzFkM2ZlZGY2ZGM4ODkzZWZhN2MiLCJpYXQiOjE2OTQwOTIzMDMuMTgwMzIsIm5iZiI6MTY5NDA5MjMwMy4xODAzMjMsImV4cCI6MTcyNTcxNDcwMy4xNDM3MjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Qjty80lM4AXNFNDSY4XC0ISpcOgZ17NTKBllqfK2aa3YRdNUHOslpx3uoYkNNOeeQXEI8mzTn5ewYiFp_NmuYQboamaKzvPYjkGLherpL14z-sA1eqYDHV3EmeUQKpUVdpnN3FhMBJS9SmTG4qi1hNDJCRY3M2F53xjgWI536Wz7-gOztKjO6htZek0hNXYPzQ-MJL5jHCaR4CeDObphDwMg4XpyWfgdIZTUG-7HLXBRkesG6Kg6nQWTVpUaSSrk4B2S8T-n-XCm15E1dVzY-9CrKPNtX89WUVVV_OxVAjrmJ5EP4lrw5pVmEtOlqq0ijeRkK8bIO_ulcxjUtuRrDIiOLYyUmnB6oLuAr2iTxqaKJJWMhKtfO9HLV3Oq9vtGLMRJdThfCgxJWEaHiQtl4x1MMD_OhTvCLGlQIK0gAi-BKFSJZpEVnOL6rzWCcTreGVaUzVkvkjrKOfeVZehYIkr00B_-9KoRpfK4RoKs3TQG9xFS2TC9VhHlx8z1MQe0oiyM8Xe26Q9DnDviqz01nWfLFRTytg-vqEJ5p4sv3v5HU4B3J8dPSznWKHQTMiUPERCYFx3vuk-hd6eKSggIentY89IVczZRLGiyvkOgp7D4amhIowSy5wBvXdKoR1xl_56gYGQN1u_sX2a-jPNrfm5pY08H9lmKLsdvlsRW9dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Must accept json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Testing",
+									"description": "Country Name",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "TS",
+									"description": "Country Code",
+									"type": "text"
+								},
+								{
+									"key": "continent",
+									"value": "TS",
+									"description": "Country Continent",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/countries",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjJhYzcwMjllMGQ1OGUzZDNiNjQ0MzkxOTViODNhNjE4MzIwNWI0YTcwMWE1NTY5NjU1YjJmNmI3ZmY1MzFkM2ZlZGY2ZGM4ODkzZWZhN2MiLCJpYXQiOjE2OTQwOTIzMDMuMTgwMzIsIm5iZiI6MTY5NDA5MjMwMy4xODAzMjMsImV4cCI6MTcyNTcxNDcwMy4xNDM3MjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Qjty80lM4AXNFNDSY4XC0ISpcOgZ17NTKBllqfK2aa3YRdNUHOslpx3uoYkNNOeeQXEI8mzTn5ewYiFp_NmuYQboamaKzvPYjkGLherpL14z-sA1eqYDHV3EmeUQKpUVdpnN3FhMBJS9SmTG4qi1hNDJCRY3M2F53xjgWI536Wz7-gOztKjO6htZek0hNXYPzQ-MJL5jHCaR4CeDObphDwMg4XpyWfgdIZTUG-7HLXBRkesG6Kg6nQWTVpUaSSrk4B2S8T-n-XCm15E1dVzY-9CrKPNtX89WUVVV_OxVAjrmJ5EP4lrw5pVmEtOlqq0ijeRkK8bIO_ulcxjUtuRrDIiOLYyUmnB6oLuAr2iTxqaKJJWMhKtfO9HLV3Oq9vtGLMRJdThfCgxJWEaHiQtl4x1MMD_OhTvCLGlQIK0gAi-BKFSJZpEVnOL6rzWCcTreGVaUzVkvkjrKOfeVZehYIkr00B_-9KoRpfK4RoKs3TQG9xFS2TC9VhHlx8z1MQe0oiyM8Xe26Q9DnDviqz01nWfLFRTytg-vqEJ5p4sv3v5HU4B3J8dPSznWKHQTMiUPERCYFx3vuk-hd6eKSggIentY89IVczZRLGiyvkOgp7D4amhIowSy5wBvXdKoR1xl_56gYGQN1u_sX2a-jPNrfm5pY08H9lmKLsdvlsRW9dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TESTINGGG\",\r\n    \"code\": \"TS\",\r\n    \"continent\" : \"TS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/countries/259",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"259"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjJhYzcwMjllMGQ1OGUzZDNiNjQ0MzkxOTViODNhNjE4MzIwNWI0YTcwMWE1NTY5NjU1YjJmNmI3ZmY1MzFkM2ZlZGY2ZGM4ODkzZWZhN2MiLCJpYXQiOjE2OTQwOTIzMDMuMTgwMzIsIm5iZiI6MTY5NDA5MjMwMy4xODAzMjMsImV4cCI6MTcyNTcxNDcwMy4xNDM3MjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Qjty80lM4AXNFNDSY4XC0ISpcOgZ17NTKBllqfK2aa3YRdNUHOslpx3uoYkNNOeeQXEI8mzTn5ewYiFp_NmuYQboamaKzvPYjkGLherpL14z-sA1eqYDHV3EmeUQKpUVdpnN3FhMBJS9SmTG4qi1hNDJCRY3M2F53xjgWI536Wz7-gOztKjO6htZek0hNXYPzQ-MJL5jHCaR4CeDObphDwMg4XpyWfgdIZTUG-7HLXBRkesG6Kg6nQWTVpUaSSrk4B2S8T-n-XCm15E1dVzY-9CrKPNtX89WUVVV_OxVAjrmJ5EP4lrw5pVmEtOlqq0ijeRkK8bIO_ulcxjUtuRrDIiOLYyUmnB6oLuAr2iTxqaKJJWMhKtfO9HLV3Oq9vtGLMRJdThfCgxJWEaHiQtl4x1MMD_OhTvCLGlQIK0gAi-BKFSJZpEVnOL6rzWCcTreGVaUzVkvkjrKOfeVZehYIkr00B_-9KoRpfK4RoKs3TQG9xFS2TC9VhHlx8z1MQe0oiyM8Xe26Q9DnDviqz01nWfLFRTytg-vqEJ5p4sv3v5HU4B3J8dPSznWKHQTMiUPERCYFx3vuk-hd6eKSggIentY89IVczZRLGiyvkOgp7D4amhIowSy5wBvXdKoR1xl_56gYGQN1u_sX2a-jPNrfm5pY08H9lmKLsdvlsRW9dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/countries/258",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"258"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "States",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/states",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"states"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Jawa Barat",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": "02",
+									"disabled": true
+								},
+								{
+									"key": "bagian",
+									"value": "WIB",
+									"disabled": true
+								},
+								{
+									"key": "kepulauan-code",
+									"value": "9",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get State by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/states/4168",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"states",
+								"4168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjJhYzcwMjllMGQ1OGUzZDNiNjQ0MzkxOTViODNhNjE4MzIwNWI0YTcwMWE1NTY5NjU1YjJmNmI3ZmY1MzFkM2ZlZGY2ZGM4ODkzZWZhN2MiLCJpYXQiOjE2OTQwOTIzMDMuMTgwMzIsIm5iZiI6MTY5NDA5MjMwMy4xODAzMjMsImV4cCI6MTcyNTcxNDcwMy4xNDM3MjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Qjty80lM4AXNFNDSY4XC0ISpcOgZ17NTKBllqfK2aa3YRdNUHOslpx3uoYkNNOeeQXEI8mzTn5ewYiFp_NmuYQboamaKzvPYjkGLherpL14z-sA1eqYDHV3EmeUQKpUVdpnN3FhMBJS9SmTG4qi1hNDJCRY3M2F53xjgWI536Wz7-gOztKjO6htZek0hNXYPzQ-MJL5jHCaR4CeDObphDwMg4XpyWfgdIZTUG-7HLXBRkesG6Kg6nQWTVpUaSSrk4B2S8T-n-XCm15E1dVzY-9CrKPNtX89WUVVV_OxVAjrmJ5EP4lrw5pVmEtOlqq0ijeRkK8bIO_ulcxjUtuRrDIiOLYyUmnB6oLuAr2iTxqaKJJWMhKtfO9HLV3Oq9vtGLMRJdThfCgxJWEaHiQtl4x1MMD_OhTvCLGlQIK0gAi-BKFSJZpEVnOL6rzWCcTreGVaUzVkvkjrKOfeVZehYIkr00B_-9KoRpfK4RoKs3TQG9xFS2TC9VhHlx8z1MQe0oiyM8Xe26Q9DnDviqz01nWfLFRTytg-vqEJ5p4sv3v5HU4B3J8dPSznWKHQTMiUPERCYFx3vuk-hd6eKSggIentY89IVczZRLGiyvkOgp7D4amhIowSy5wBvXdKoR1xl_56gYGQN1u_sX2a-jPNrfm5pY08H9lmKLsdvlsRW9dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tseting\",\r\n    \"country_id\": 259,\r\n    \"code\":  2,\r\n    \"kepulauan_code\": 9,\r\n    \"bagian\": \"WIB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/states",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"states"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjJhYzcwMjllMGQ1OGUzZDNiNjQ0MzkxOTViODNhNjE4MzIwNWI0YTcwMWE1NTY5NjU1YjJmNmI3ZmY1MzFkM2ZlZGY2ZGM4ODkzZWZhN2MiLCJpYXQiOjE2OTQwOTIzMDMuMTgwMzIsIm5iZiI6MTY5NDA5MjMwMy4xODAzMjMsImV4cCI6MTcyNTcxNDcwMy4xNDM3MjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Qjty80lM4AXNFNDSY4XC0ISpcOgZ17NTKBllqfK2aa3YRdNUHOslpx3uoYkNNOeeQXEI8mzTn5ewYiFp_NmuYQboamaKzvPYjkGLherpL14z-sA1eqYDHV3EmeUQKpUVdpnN3FhMBJS9SmTG4qi1hNDJCRY3M2F53xjgWI536Wz7-gOztKjO6htZek0hNXYPzQ-MJL5jHCaR4CeDObphDwMg4XpyWfgdIZTUG-7HLXBRkesG6Kg6nQWTVpUaSSrk4B2S8T-n-XCm15E1dVzY-9CrKPNtX89WUVVV_OxVAjrmJ5EP4lrw5pVmEtOlqq0ijeRkK8bIO_ulcxjUtuRrDIiOLYyUmnB6oLuAr2iTxqaKJJWMhKtfO9HLV3Oq9vtGLMRJdThfCgxJWEaHiQtl4x1MMD_OhTvCLGlQIK0gAi-BKFSJZpEVnOL6rzWCcTreGVaUzVkvkjrKOfeVZehYIkr00B_-9KoRpfK4RoKs3TQG9xFS2TC9VhHlx8z1MQe0oiyM8Xe26Q9DnDviqz01nWfLFRTytg-vqEJ5p4sv3v5HU4B3J8dPSznWKHQTMiUPERCYFx3vuk-hd6eKSggIentY89IVczZRLGiyvkOgp7D4amhIowSy5wBvXdKoR1xl_56gYGQN1u_sX2a-jPNrfm5pY08H9lmKLsdvlsRW9dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Testing\",\r\n    \"country_id\": 259,\r\n    \"code\":  2,\r\n    \"kepulauan_code\": 9,\r\n    \"bagian\": \"WIB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/states/4167",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"states",
+								"4167"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjJhYzcwMjllMGQ1OGUzZDNiNjQ0MzkxOTViODNhNjE4MzIwNWI0YTcwMWE1NTY5NjU1YjJmNmI3ZmY1MzFkM2ZlZGY2ZGM4ODkzZWZhN2MiLCJpYXQiOjE2OTQwOTIzMDMuMTgwMzIsIm5iZiI6MTY5NDA5MjMwMy4xODAzMjMsImV4cCI6MTcyNTcxNDcwMy4xNDM3MjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Qjty80lM4AXNFNDSY4XC0ISpcOgZ17NTKBllqfK2aa3YRdNUHOslpx3uoYkNNOeeQXEI8mzTn5ewYiFp_NmuYQboamaKzvPYjkGLherpL14z-sA1eqYDHV3EmeUQKpUVdpnN3FhMBJS9SmTG4qi1hNDJCRY3M2F53xjgWI536Wz7-gOztKjO6htZek0hNXYPzQ-MJL5jHCaR4CeDObphDwMg4XpyWfgdIZTUG-7HLXBRkesG6Kg6nQWTVpUaSSrk4B2S8T-n-XCm15E1dVzY-9CrKPNtX89WUVVV_OxVAjrmJ5EP4lrw5pVmEtOlqq0ijeRkK8bIO_ulcxjUtuRrDIiOLYyUmnB6oLuAr2iTxqaKJJWMhKtfO9HLV3Oq9vtGLMRJdThfCgxJWEaHiQtl4x1MMD_OhTvCLGlQIK0gAi-BKFSJZpEVnOL6rzWCcTreGVaUzVkvkjrKOfeVZehYIkr00B_-9KoRpfK4RoKs3TQG9xFS2TC9VhHlx8z1MQe0oiyM8Xe26Q9DnDviqz01nWfLFRTytg-vqEJ5p4sv3v5HU4B3J8dPSznWKHQTMiUPERCYFx3vuk-hd6eKSggIentY89IVczZRLGiyvkOgp7D4amhIowSy5wBvXdKoR1xl_56gYGQN1u_sX2a-jPNrfm5pY08H9lmKLsdvlsRW9dA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/states/4168",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"states",
+								"4168"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"abriansyah\",\r\n    \"email\": \"abriansyah1099@gmail.com\",\r\n    \"password\": \"admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abriansyah1099@gmail.com\",\r\n    \"password\": \"admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
